@@ -3,12 +3,12 @@
 import './styles/normalize.css';
 
 import './js/mainPage';
-// import './js/preloader.js';
+import './js/preloader.js';
 import innerPage from './js/inner_page';
 
 import './js/watched';
 
-// import './styles/preloader.css';
+import './styles/preloader.css';
 
 import './styles.css';
 
