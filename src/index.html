@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Starter Kit</title>
 
-    <!-- Don't forget to delete this style tag. -->
-    <style>
-      body {
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 
-      .intro {
-        text-align: center;
-      }
+<body>
+  <header class="header">
+    <a class="logo bounce">
+      <img class="logo-img" src="./images/logo.png" alt="logo">
+      <span class="logo-name ">Filmoteka</span>
+    </a>
+    <nav class="nav bounce">
+      <ul class="nav-list">
+        <li class="nav-list__item">home</li>
+        <li class="nav-list__item">my library</li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="searchBar">
+      <form action="post">
+        <input type="text" class="searchInput" placeholder="Write movie name and click Enter">
+      </form>
+    </div>
+    <div class="warning-wrapper">
+      <p class="warning-info">Films not found!</p>
+    </div>
+    <ul class="article-list"></ul>
+    <div class="pagination-box">
+      <button class="pagination-box-button prev">Prev</button>
+      <span class="pagination-box-info"></span>
+      <button class="pagination-box-button next">Next</button>
+    </div>
+    <button class="scrollTopButton"></button>
+  </main>
 
-      .intro h1 {
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 40px;
-      }
+  <footer class="footer">
+    <p class="footer-info">Made by TheBestGroup</p>
+  </footer>
+</body>
 
-      .intro img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
-  </head>
-
-  <body>
-    <article class="intro">
-      <h1>Webpack starter kit</h1>
-
-      <!-- HTML image reference example. -->
-      <img src="./images/intro.png" alt="" width="640" />
-    </article>
-  </body>
 </html>

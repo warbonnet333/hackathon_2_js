@@ -1,20 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Prata');
 html {
   box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+/* HEADER---------------------------------------- */
 
-  /*
-   * CSS image reference example.
-   */
-  background-image: url('./images/bg-pattern.png');
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 66px;
+  background-color: #77c1bb;
+  font-size: 12px;
+  font-family: 'Myriad Pro', sans-serif;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 108px;
+  cursor: pointer;
+  height: 20px;
+  margin: 10px;
+}
+.logo-img {
+  width: 22px;
+}
+.logo-name {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.nav-list {
+  /* width: 248px; */
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  /* margin: 0 0 0 36px; */
+  padding: 0;
+}
+.nav-list__item {
+  text-transform: uppercase;
+  width: 124px;
+  height: 30px;
+  font-weight: 600;
+  color: #372c48;
+  line-height: 2.4;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+.nav-list__item::after {
+  background-color: #372c48;
+  display: block;
+  content: '';
+  height: 2px;
+  width: 0%;
+  left: 50%;
+  position: absolute;
+  transition: width 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.nav-list__item:hover:after,
+.nav-list__item:focus:after {
+  width: 120px;
+}
+/* SearchBar------------------------------------ */
+.searchBar {
+  padding: 22px 0 22px;
+  margin: 0 auto 22px;
+  width: 100%;
+  background-color: #f3f6f6;
+  box-shadow: 0 5px 9px 1px rgba(0, 0, 0, 0.23);
+}
+.searchInput {
+  display: block;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 24px;
+  width: 260px;
+  border: none;
+  border-bottom: 2px rgb(129, 126, 126) solid;
+  background-image: url(./images/icon.png);
+  background-repeat: no-repeat;
+  outline: none;
+  padding: 0 26px 0;
+  margin: 0 auto;
+  background-color: #f3f6f6;
+}
+
+/* ARTICLE LIST ==========================================*/
+
+.article-list {
+  display: grid;
+  grid-template-columns: 298px;
+  grid-gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+.article-list__item {
+  height: 156px;
+  position: relative;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+.article-list__item:hover {
+  transform: scale(1.03);
+}
+.article-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.film-title {
+  position: relative;
+  z-index: 1;
+  left: 12px;
+  bottom: 30px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  color: #fff;
+}
+.inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background: -webkit-linear-gradient(
+    bottom,
+    #000 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  transition: all 200ms linear;
+}
+.inner:hover {
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.47);
+}
+/* BUTTONS PAGINATION */
+.pagination-box {
+  margin: 28px auto 24px;
+  display: flex;
+  justify-content: space-between;
+  width: 270px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+.pagination-box-button {
+  width: 96px;
+  border-radius: 6px;
+  border: 1px rgb(199, 195, 195) solid;
+  background-image: linear-gradient(
+    0deg,
+    rgba(207, 207, 207, 1) 4%,
+    rgba(255, 255, 255, 0) 66%
+  );
+
+  transition: all 200ms linear;
+  outline: none;
+  cursor: pointer;
+}
+.pagination-box-button:hover {
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.hiddenButton {
+  opacity: 0;
+  visibility: hidden;
+}
+.pagination-box-info {
+  border-radius: 6px;
+  border: 1px rgb(199, 195, 195) solid;
+  height: 48px;
+  width: 48px;
+  background: rgb(207, 207, 207);
+  background: linear-gradient(
+    0deg,
+    rgba(207, 207, 207, 1) 4%,
+    rgba(255, 255, 255, 0) 66%
+  );
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  line-height: 2.2;
+}
+/* FOOTER------------------------ */
+.footer {
+  height: 86px;
+  background-color: #77c1bb;
+  padding-top: 34px;
+}
+.footer-info {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  width: 200px;
+}
+/* -WARNING----------------------- */
+
+.warning-wrapper {
+  padding: 6px;
+  border-radius: 10px;
+  background-color: rgba(228, 135, 135, 1);
+  margin: 0 auto;
+  width: 92%;
+  opacity: 0;
+  display: none;
+  transition: all 200ms linear;
+}
+.warning-info {
+  margin: 0;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Myriad Pro', sans-serif;
+  color: #372c48;
+}
+.warning-wrapper-show {
+  display: block;
+  opacity: 1;
+}
+/* -------------------------------- */
+
+.scrollTopButton {
+  display: block;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #8ecbc6; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms linear;
+  height: 50px;
+  width: 50px;
+  background-image: url(./images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: 50% 45%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.53);
+}
+
+.scrollTopButton:hover {
+  cursor: pointer;
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+.scrollTopButton:active {
+  background-color: #555;
+}
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MEDIA requests=================================================================== */
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 34px;
+  }
+  .logo-name {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    font-size: 17px;
+    color: #372c48;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-left: 6px;
+    align-self: center;
+  }
+  .article-list {
+    grid-template-columns: 346px 346px;
+    grid-row-gap: 18px;
+    grid-column-gap: 22px;
+  }
+  .article-list__item {
+    height: 182px;
+  }
+}
+@media (min-width: 1024px) {
+  .header {
+    padding: 0 104px;
+  }
+  .article-list {
+    grid-template-columns: 380px 380px;
+    grid-row-gap: 16px;
+    grid-column-gap: 26px;
+  }
+  .article-list__item {
+    height: 214px;
+  }
+}
+@media (min-width: 1400px) {
+  .header {
+    padding: 0 300px;
+  }
+  .warning-wrapper {
+    width: 52%;
+  }
+}
+
+/* ANIMATION===================================== */
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -16px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.bounce {
+  animation: bounce 1s;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
 }
