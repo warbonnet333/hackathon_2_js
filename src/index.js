@@ -1,12 +1,18 @@
 'use strict';
 
+import './styles/normalize.css';
+
 import './js/mainPage';
 // import './js/preloader.js';
-import './styles/normalize.css';
+import innerPage from './js/inner_page';
+
+import './js/watched';
+
 // import './styles/preloader.css';
+
 import './styles.css';
 
-import innerPage from './js/inner_page';
+// import './styles/watched.css';
 
 // import '.css/styles.css';
 // import './css/film-list.css';

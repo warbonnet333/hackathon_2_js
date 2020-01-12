@@ -59,6 +59,8 @@
     "axios": "^0.19.1",
     "core-js": "^3.3.4",
     "debounce": "^1.2.0",
-    "handlebars": "^4.5.3"
+    "handlebars": "^4.5.3",
+    "material-design-icons": "^3.0.1",
+    "pnotify": "^4.0.0"
   }
 }

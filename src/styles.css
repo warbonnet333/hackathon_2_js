@@ -7,6 +7,11 @@ html {
 *::after {
   box-sizing: inherit;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 /* HEADER---------------------------------------- */
 
@@ -200,6 +205,7 @@ html {
 }
 /* FOOTER------------------------ */
 .footer {
+  margin-top: auto;
   height: 86px;
   background-color: #77c1bb;
   padding-top: 34px;
@@ -269,6 +275,11 @@ html {
 .show {
   opacity: 1;
   visibility: visible;
+}
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* MEDIA requests=================================================================== */
@@ -353,4 +364,15 @@ html {
   animation-name: bounce;
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
+}
+/*  */
+.nav-btns {
+  background-color: #f3f6f6;
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  justify-content: space-around;
+  flex-basis: 300px;
+  width: 150px;
+  margin: 0 auto;
 }

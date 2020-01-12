@@ -4,6 +4,8 @@ import './scrollTop';
 import scrollToTop from './scrollToTop';
 import mapper from './mapper';
 import { debounce } from 'debounce';
+import getFullInfo from './inner_page';
+import { showWatchedFilms } from './watched';
 
 const refs = {
   articleList: document.querySelector('.article-list'),
@@ -12,11 +14,38 @@ const refs = {
   buttonPrev: document.querySelector('.prev'),
   paginationBoxInfo: document.querySelector('.pagination-box-info'),
   warningBox: document.querySelector('.warning-wrapper'),
+  homeBtn: document.querySelector('[data-action="home"]'),
+  libraryBtn: document.querySelector('.js-library'),
+  listWatch: document.querySelector('#watched_list'),
+  listArticle: document.querySelector('.article-list'),
+  filmPage: document.querySelector('#film-page'),
+  paginationBox: document.querySelector('.pagination-box'),
+  navBtns: document.querySelector('.nav-btns'),
+  watcheBtn: document.querySelector('.js-watched'),
+  queueBtn: document.querySelector('.js-queue'),
 };
+
+export default refs;
+
+refs.articleList.addEventListener('click', getFullInfo);
+refs.listWatch.addEventListener('click', getFullInfo);
+refs.libraryBtn.addEventListener('click', showWatchedFilms);
+refs.homeBtn.addEventListener('click', fetchArticlesCall);
+document.querySelector('.logo').addEventListener('click', fetchArticlesCall);
+refs.watcheBtn.addEventListener('click', showWatchedFilms);
 
 let page = 1;
 
+function fetchArticlesCall(event) {
+  fetchArticles();
+}
+
 const fetchArticles = (page = 1) => {
+  refs.filmPage.innerHTML = '';
+  refs.listWatch.innerHTML = '';
+  refs.searchInput.classList.remove('hidden');
+  refs.paginationBox.classList.remove('hidden');
+  refs.navBtns.classList.add('hidden');
   refs.paginationBoxInfo.textContent = page;
   page === 1 ? refs.buttonPrev.classList.add('hiddenButton') : null;
   API.getArticles(page)

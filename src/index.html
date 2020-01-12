@@ -9,19 +9,26 @@
 
   <body>
     <header class="header">
-      <a class="logo bounce">
+      <a class="logo bounce" href="#">
         <img class="logo-img" src="./images/logo.png" alt="logo" />
         <span class="logo-name ">Filmoteka</span>
       </a>
       <nav class="nav bounce">
         <ul class="nav-list">
-          <li class="nav-list__item">home</li>
-          <li class="nav-list__item">my library</li>
+          <li class="nav-list__item" data-action="home">home</li>
+          <li class="nav-list__item js-library" data-action="library">
+            my library
+          </li>
         </ul>
       </nav>
     </header>
+
     <main class="main">
       <div class="searchBar">
+        <div class="nav-btns hidden">
+          <button class="nav-btn js-watched ">Watched</button>
+          <button class="nav-btn js-queue ">Queue</button>
+        </div>
         <form action="post">
           <input
             type="text"
@@ -34,6 +41,8 @@
         <p class="warning-info">Films not found!</p>
       </div>
       <ul class="article-list"></ul>
+      <ul class="films_list" id="watched_list"></ul>
+      <div class="film" id="film-page"></div>
       <div class="pagination-box">
         <button class="pagination-box-button prev">Prev</button>
         <span class="pagination-box-info"></span>
@@ -41,8 +50,6 @@
       </div>
       <button class="scrollTopButton"></button>
     </main>
-
-    <div class="film"></div>
 
     <footer class="footer">
       <p class="footer-info">Made by TheBestGroup</p>
