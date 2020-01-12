@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <body>
+    <header class="header">
+      <a class="logo bounce">
+        <img class="logo-img" src="./images/logo.png" alt="logo" />
+        <span class="logo-name ">Filmoteka</span>
+      </a>
+      <nav class="nav bounce">
+        <ul class="nav-list">
+          <li class="nav-list__item">home</li>
+          <li class="nav-list__item">my library</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="searchBar">
+        <form action="post">
+          <input
+            type="text"
+            class="searchInput"
+            placeholder="Write movie name and click Enter"
+          />
+        </form>
+      </div>
+      <div class="warning-wrapper">
+        <p class="warning-info">Films not found!</p>
+      </div>
+      <ul class="article-list"></ul>
+      <div class="pagination-box">
+        <button class="pagination-box-button prev">Prev</button>
+        <span class="pagination-box-info"></span>
+        <button class="pagination-box-button next">Next</button>
+      </div>
+      <button class="scrollTopButton"></button>
+    </main>
 
-<body>
-  <header class="header">
-    <a class="logo bounce">
-      <img class="logo-img" src="./images/logo.png" alt="logo">
-      <span class="logo-name ">Filmoteka</span>
-    </a>
-    <nav class="nav bounce">
-      <ul class="nav-list">
-        <li class="nav-list__item">home</li>
-        <li class="nav-list__item">my library</li>
-      </ul>
-    </nav>
-  </header>
-  <main class="main">
-    <div class="searchBar">
-      <form action="post">
-        <input type="text" class="searchInput" placeholder="Write movie name and click Enter">
-      </form>
-    </div>
-    <div class="warning-wrapper">
-      <p class="warning-info">Films not found!</p>
-    </div>
-    <ul class="article-list"></ul>
-    <div class="pagination-box">
-      <button class="pagination-box-button prev">Prev</button>
-      <span class="pagination-box-info"></span>
-      <button class="pagination-box-button next">Next</button>
-    </div>
-    <button class="scrollTopButton"></button>
-  </main>
+    <div class="film"></div>
 
-  <footer class="footer">
-    <p class="footer-info">Made by TheBestGroup</p>
-  </footer>
-</body>
-
+    <footer class="footer">
+      <p class="footer-info">Made by TheBestGroup</p>
+    </footer>
+  </body>
 </html>
