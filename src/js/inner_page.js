@@ -24,6 +24,9 @@ function concatGenreNamesBYComa(filmData) {
 let addBtn;
 
 function getFullInfo(event) {
+  if (event.target === event.currentTarget) {
+    return;
+  }
   refs.listArticle.innerHTML = ' ';
   refs.listWatch.innerHTML = ' ';
   // refs.listWatch.style.gridTemplateRows = '0px';
