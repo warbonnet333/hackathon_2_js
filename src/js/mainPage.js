@@ -10,6 +10,7 @@ import { showWatchedFilms } from './watched';
 const refs = {
   articleList: document.querySelector('.article-list'),
   searchInput: document.querySelector('.searchInput'),
+  searchBar: document.querySelector('.searchBar'),
   buttonNext: document.querySelector('.next'),
   buttonPrev: document.querySelector('.prev'),
   paginationBoxInfo: document.querySelector('.pagination-box-info'),
@@ -46,6 +47,7 @@ const fetchArticles = (page = 1) => {
   refs.searchInput.classList.remove('hidden');
   refs.paginationBox.classList.remove('hidden');
   refs.navBtns.classList.add('hidden');
+  refs.searchBar.classList.remove('hidden');
   refs.paginationBoxInfo.textContent = page;
   page === 1 ? refs.buttonPrev.classList.add('hiddenButton') : null;
   API.getArticles(page)

@@ -17,13 +17,13 @@ export const toggleWatched = event => {
     event.target.classList.remove('added');
     event.target.classList.add('video-icon');
     event.target.classList.remove('video-icon-remove');
-    event.target.textContent = 'Add to watched';
+    event.target.textContent = 'Add to library';
   } else {
     upperFnToAdd(event);
     event.target.classList.add('added');
     event.target.classList.remove('video-icon');
     event.target.classList.add('video-icon-remove');
-    event.target.textContent = 'Remove from watched';
+    event.target.textContent = 'Remove from library';
   }
 };
 
@@ -73,7 +73,8 @@ export const showWatchedFilms = () => {
   refs.listArticle.innerHTML = ' ';
   refs.searchInput.classList.add('hidden');
   refs.paginationBox.classList.add('hidden');
-  refs.navBtns.classList.remove('hidden');
+  refs.searchBar.classList.add('hidden');
+  // refs.navBtns.classList.remove('hidden');
   const filmsArray = JSON.parse(localStorage.getItem('watched-films'));
   if (filmsArray) {
     list.insertAdjacentHTML('beforeend', createMarkup(filmsArray));
