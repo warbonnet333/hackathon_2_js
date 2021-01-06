@@ -56,7 +56,7 @@
         "webpackbar": "^4.0.0"
     },
     "dependencies": {
-        "axios": "^0.19.1",
+        "axios": "^0.21.1",
         "core-js": "^3.3.4",
         "debounce": "^1.2.0",
         "handlebars": "^4.5.3",
